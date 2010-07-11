@@ -1,5 +1,5 @@
 %define name libcue
-%define version 1.3.0
+%define version 1.4.0
 %define release %mkrel 1
 %define major 1
 %define libname %mklibname cue %major
@@ -9,7 +9,7 @@ Summary: Cuesheet parser library
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://sourceforge.net/projects/libcue/files/libcue/%version/%{name}-%{version}.tar.bz2
+Source0: http://downloads.sourceforge.net/project/%name/%name/%version/%name-%version.tar.bz2
 License: GPLv2
 Group: System/Libraries
 Url: http://libcue.sourceforge.net/
@@ -62,5 +62,5 @@ rm -rf %{buildroot}
 %_libdir/libcue.la
 %_libdir/libcue.a
 %_libdir/pkgconfig/libcue.pc
-%_includedir/libcue-1.3
+%_includedir/libcue-1.4
 
