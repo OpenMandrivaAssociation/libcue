@@ -1,6 +1,6 @@
 %define name libcue
 %define version 1.4.0
-%define release %mkrel 1
+%define release %mkrel 2
 %define major 1
 %define libname %mklibname cue %major
 %define develname %mklibname -d cue 
