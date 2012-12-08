@@ -1,39 +1,35 @@
-%define name libcue
-%define version 1.4.0
-%define release %mkrel 2
 %define major 1
 %define libname %mklibname cue %major
 %define develname %mklibname -d cue 
 
-Summary: Cuesheet parser library
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: http://downloads.sourceforge.net/project/%name/%name/%version/%name-%version.tar.bz2
-License: GPLv2
-Group: System/Libraries
-Url: http://libcue.sourceforge.net/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Summary:	Cuesheet parser library
+Name:		libcue
+Version:	1.4.0
+Release:	3
+License:	GPLv2
+Group:		System/Libraries
+Url:		http://libcue.sourceforge.net/
+Source0:	http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.bz2
 
 %description
 This is a library for parsing cue sheets which describe audio CD images. They
 are useful for gapless music playback.
 
-%package -n %libname
-Group: System/Libraries
-Summary:Cuesheet parser library
+%package -n %{libname}
+Group:		System/Libraries
+Summary:	Cuesheet parser library
 
-%description -n %libname
+%description -n %{libname}
 This is a library for parsing cue sheets which describe audio CD images. They
 are useful for gapless music playback.
 
-%package -n %develname
-Group: Development/C
-Summary:Cuesheet parser library
-Requires: %libname = %version-%release
-Provides: libcue-devel = %version-%release
+%package -n %{develname}
+Group:		Development/C
+Summary:	Cuesheet parser library
+Requires:	%{libname} = %{version}-%{release}
+Provides:	libcue-devel = %{version}-%{release}
 
-%description -n %develname
+%description -n %{develname}
 This is a library for parsing cue sheets which describe audio CD images. They
 are useful for gapless music playback.
 
@@ -41,26 +37,34 @@ are useful for gapless music playback.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --disable-static
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
+%files -n %{libname}
+%{_libdir}/libcue.so.%{major}*
 
-%files -n %libname
-%defattr(-,root,root)
-%_libdir/libcue.so.%{major}*
-
-%files -n %develname
-%defattr(-,root,root)
+%files -n %{develname}
 %doc AUTHORS NEWS ChangeLog
-%_libdir/libcue.so
-%_libdir/libcue.la
-%_libdir/libcue.a
-%_libdir/pkgconfig/libcue.pc
-%_includedir/libcue-1.4
+%{_libdir}/libcue.so
+%{_libdir}/pkgconfig/libcue.pc
+%{_includedir}/libcue-1.4
+
+
+
+%changelog
+* Tue Jul 12 2011 Götz Waschk <waschk@mandriva.org> 1.4.0-2
++ Revision: 689635
+- rebuild
+
+* Sun Jul 11 2010 Götz Waschk <waschk@mandriva.org> 1.4.0-1mdv2011.0
++ Revision: 550983
+- new version
+- update file list
+
+* Tue Nov 10 2009 Götz Waschk <waschk@mandriva.org> 1.3.0-1mdv2010.1
++ Revision: 463976
+- import libcue
 
