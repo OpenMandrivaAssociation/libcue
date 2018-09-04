@@ -44,7 +44,7 @@ are useful for gapless music playback.
 %make_build
 
 %install
-%makeinstall_std
+%make_install -C build
 
 %files -n %{libname}
 %{_libdir}/libcue.so.%{major}*
