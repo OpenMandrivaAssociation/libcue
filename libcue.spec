@@ -1,15 +1,15 @@
-%define major	1
+%define major	2
 %define libname	%mklibname cue %major
 %define devname	%mklibname -d cue 
 
 Summary:	Cuesheet parser library
 Name:		libcue
-Version:	1.4.0
-Release:	12
+Version:	2.2.1
+Release:	1
 License:	GPLv2
 Group:		System/Libraries
-Url:		http://libcue.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.bz2
+Url:		https://github.com/lipnitsk/libcue
+Source0:	https://github.com/lipnitsk/libcue/archive/v%{version}/%{name}-%{version}.tar.gz
 
 %description
 This is a library for parsing cue sheets which describe audio CD images. They
