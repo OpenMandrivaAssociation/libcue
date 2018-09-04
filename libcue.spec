@@ -48,10 +48,11 @@ are useful for gapless music playback.
 
 %files -n %{libname}
 %{_libdir}/libcue.so.%{major}*
+%_libdir/libcue.so.%{version}
 
 %files -n %{devname}
-%doc AUTHORS NEWS ChangeLog
+%doc ChangeLog
 %{_libdir}/libcue.so
 %{_libdir}/pkgconfig/libcue.pc
-%{_includedir}/libcue-1.4
+%_includedir/libcue*
 
