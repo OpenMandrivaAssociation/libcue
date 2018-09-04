@@ -10,6 +10,7 @@ License:	GPLv2
 Group:		System/Libraries
 Url:		https://github.com/lipnitsk/libcue
 Source0:	https://github.com/lipnitsk/libcue/archive/v%{version}/%{name}-%{version}.tar.gz
+BuildRequires:  cmake
 
 %description
 This is a library for parsing cue sheets which describe audio CD images. They
@@ -37,8 +38,8 @@ are useful for gapless music playback.
 %setup -q
 
 %build
-%configure2_5x --disable-static
-%make
+%cmake
+%make_build
 
 %install
 %makeinstall_std
