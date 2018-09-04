@@ -11,6 +11,8 @@ Group:		System/Libraries
 Url:		https://github.com/lipnitsk/libcue
 Source0:	https://github.com/lipnitsk/libcue/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  cmake
+BuildRequires:  bison
+BuildRequires:  flex
 
 %description
 This is a library for parsing cue sheets which describe audio CD images. They
