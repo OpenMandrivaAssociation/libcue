@@ -1,15 +1,18 @@
-%define major	1
+%define major	2
 %define libname	%mklibname cue %major
 %define devname	%mklibname -d cue 
 
 Summary:	Cuesheet parser library
 Name:		libcue
-Version:	1.4.0
-Release:	12
+Version:	2.2.1
+Release:	1
 License:	GPLv2
 Group:		System/Libraries
-Url:		http://libcue.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.bz2
+Url:		https://github.com/lipnitsk/libcue
+Source0:	https://github.com/lipnitsk/libcue/archive/v%{version}/%{name}-%{version}.tar.gz
+BuildRequires:  cmake
+BuildRequires:  bison
+BuildRequires:  flex
 
 %description
 This is a library for parsing cue sheets which describe audio CD images. They
@@ -37,18 +40,19 @@ are useful for gapless music playback.
 %setup -q
 
 %build
-%configure2_5x --disable-static
-%make
+%cmake
+%make_build
 
 %install
-%makeinstall_std
+%make_install -C build
 
 %files -n %{libname}
 %{_libdir}/libcue.so.%{major}*
+%_libdir/libcue.so.%{version}
 
 %files -n %{devname}
-%doc AUTHORS NEWS ChangeLog
+%doc ChangeLog
 %{_libdir}/libcue.so
 %{_libdir}/pkgconfig/libcue.pc
-%{_includedir}/libcue-1.4
+%_includedir/libcue*
 
