@@ -5,7 +5,7 @@
 Summary:	Cuesheet parser library
 Name:		libcue
 Version:	2.2.1
-Release:	2
+Release:	3
 License:	GPLv2
 Group:		System/Libraries
 Url:		https://github.com/lipnitsk/libcue
