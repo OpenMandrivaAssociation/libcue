@@ -4,8 +4,8 @@
 
 Summary:	Cuesheet parser library
 Name:		libcue
-Version:	2.2.1
-Release:	3
+Version:	2.3.0
+Release:	1
 License:	GPLv2
 Group:		System/Libraries
 Url:		https://github.com/lipnitsk/libcue
@@ -48,11 +48,10 @@ are useful for gapless music playback.
 
 %files -n %{libname}
 %{_libdir}/libcue.so.%{major}*
-%_libdir/libcue.so.%{version}
 
 %files -n %{devname}
 %doc ChangeLog
 %{_libdir}/libcue.so
 %{_libdir}/pkgconfig/libcue.pc
-%_includedir/libcue*
+%{_includedir}/libcue*
 
